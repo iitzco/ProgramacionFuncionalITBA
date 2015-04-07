@@ -1,0 +1,1 @@
+esSauronico x = if (mod (mod x 100) 4 == 0 && (mod x 100) > 0) || mod x 400 == 0 then True else False
