@@ -1,0 +1,5 @@
+--(+ -2)
+--es una sintaxis invalida
+-- En cambio
+-- (+ (-2))
+-- :t Int -> Int
