@@ -43,4 +43,18 @@ data List a = Nil | Cons a (List a)
 
 data Tree a = Hoja a | Nodo a (Tree a) (Tree a)
 
+data Cadena = Z  | S Cadena
+
+data SortedList a = Elem a | Cad a (SortedList a) deriving Show
+
+count :: SortedList a -> Int
+
+count (Elem x) = 1
+count (Cad a sl) = 1 + count sl
+
+insert :: SortedList Int -> Int -> SortedList Int
+
+insert (Elem x) y = if y<x then Cad y (Elem x) else Cad x (Elem y)
+insert (Cad x sl) y = if y<x then Cad y (Cad x sl) else Cad x (insert sl y)
+
 
